@@ -1,0 +1,17 @@
+<html>
+<body>
+<form action="/add-message" method="post">
+    <input type="text" placeholder="Enter Message" name="messageText">
+    <button type="submit">Add Message</button>
+</form>
+
+<ol>
+    {{#messages}}
+    <li>{{text}} <form action="/delete-message" method="post"><input type="hidden" name="messageId" value="{{id}}">
+        <button type="submit">Delete</button></form>
+        <a href="/edit-message?updateId={{id}}">Edit</a></li>
+    {{/messages}}
+</ol>
+
+</body>
+</html>
